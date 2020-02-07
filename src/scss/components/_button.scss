@@ -1,0 +1,62 @@
+.btn {
+  display: inline-flex;
+  font-size: $font-md;
+  font-weight: 700;
+  background-color: $globe;
+  color: $white;
+  padding: 0.75em 1.5em;
+  line-height: 1.25em;
+  text-decoration: none;
+  margin-right: 1.5em;
+  box-sizing: content-box;
+  letter-spacing: -0.025em;
+
+  &-primary {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &-secondary {
+    background-color: $secondary;
+    color: $white;
+  }
+
+  &-muted {
+    background-color: $gray-1;
+    color: $smokey;
+  }
+
+  &-sm {
+    font-size: $font-sm;
+  }
+
+  &-md{
+    font-size: $font-md;
+  }
+
+  &-lg {
+    font-size: $font-lg;
+  }
+
+  &-outline {
+    border: 2px solid $gray-1;
+
+    &.btn-primary {
+      background-color: transparent;
+      color: $primary;
+      border-color: $primary;
+    }
+
+    &.btn-secondary {
+      background-color: transparent;
+      color: $secondary;
+      border-color: $secondary;
+    }
+
+    &.btn-muted {
+      background-color: transparent;
+      color: $smokey;
+      border-color: $gray-1;
+    }
+  }
+}
