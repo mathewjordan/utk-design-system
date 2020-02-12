@@ -28,19 +28,24 @@ class Blocks
 
         add_theme_support('editor-color-palette', [
             [
-                'name'  => esc_html__( 'Globe', 'ut-libraries' ),
+                'name'  => esc_html__( 'Globe', 'utk' ),
                 'slug' => 'globe',
                 'color' => '#006c93',
             ],
             [
-                'name'  => esc_html__( 'Smokey', 'ut-libraries' ),
+                'name'  => esc_html__( 'Smokey', 'utk' ),
                 'slug' => 'smokey',
                 'color' => '#58595b',
             ],
             [
-                'name'  => esc_html__( 'Globe', 'ut-libraries' ),
+                'name'  => esc_html__( 'Globe', 'utk' ),
                 'slug' => 'muted',
                 'color' => '#e0e0e0',
+            ],
+            [
+                'name'  => esc_html__( 'Orange', 'utk' ),
+                'slug' => 'orange',
+                'color' => '#ff8200',
             ]
         ]);
 
