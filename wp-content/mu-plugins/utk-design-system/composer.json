@@ -1,0 +1,11 @@
+{
+    "name": "utk/design-system",
+    "description": "wordpress-muplugin",
+    "authors": [
+        {
+            "name": "Mat Jordan",
+            "email": "mat@utk.edu"
+        }
+    ],
+    "require": {}
+}
