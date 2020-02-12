@@ -18,4 +18,4 @@ if (!defined('WPINC')) {
     die;
 }
 
-require('utk_library/utk-library.php');
+require('utk-design-system/utk-design-system.php');
