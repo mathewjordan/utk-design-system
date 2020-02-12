@@ -14,6 +14,10 @@
       &.has-muted-background-color {
         @extend .btn-muted;
       }
+
+      &.has-orange-background-color {
+        @extend .btn-orange;
+      }
     }
   }
 
@@ -38,6 +42,17 @@
           background-color: transparent;
           color: $secondary;
           border-color: $gray-1;
+        }
+
+        &.has-orange-background-color {
+          background-color: transparent;
+          color: $secondary;
+          border-color: $orange;
+          box-shadow: none;
+
+          &::before {
+            content: none;
+          }
         }
       }
     }
@@ -74,6 +89,18 @@
       &:focus {
         &::after {
           left: 0.25em;
+        }
+      }
+
+      &.has-background {
+        &.has-orange-background-color {
+          &::before {
+            content: none;
+          }
+
+          &::after {
+            color: $orange;
+          }
         }
       }
     }
