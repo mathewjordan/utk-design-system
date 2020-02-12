@@ -1,8 +1,5 @@
 @import "common/variables";
 
-/** Import everything from autoload */
-@import "./autoload/**/*";
-
 /**
  * Import npm dependencies
  *
@@ -10,14 +7,13 @@
  * @see https://github.com/webpack-contrib/sass-loader#imports
  */
 // @import "~some-node-module";
-
 @import "common/global";
+@import "vendor/typography/gotham";
+@import "vendor/fontello/css/fontello.css";
 
 /** Import components */
 @import "components/button";
-@import "components/comments";
-@import "components/forms";
-@import "components/wp-classes";
 
 /** Import gutenberg */
+@import "gutenberg/block";
 @import "gutenberg/button";

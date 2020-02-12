@@ -34,11 +34,6 @@ $gray-1:      #e0e0e0;
 $gray-2:      #cacaca;
 $gray-3:      #b6b6b6;
 
-// brand
-$primary:     $globe;
-$secondary:   $smokey;
-$accent:      $orange;
-
 /*
  * typography
  */
@@ -55,11 +50,36 @@ $font-lg: 1.25rem; // large
 $font-xl: 1.5rem; // extra large
 $font-xxl: 2rem; // extra extra large
 
-$theme-colors: (
-  primary: #525ddc
-);
-
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
 
+$font-family-sans-serif: $sans;
+
+$primary:   $globe;
+$secondary: $smokey;
+
+$blue:    $globe !default;
+$indigo:  $leconte !default;
+$purple:  $regalia !default;
+$pink:    $energy !default;
+$red:     $torch !default;
+$orange:  $orange !default;
+$yellow:  $sunsphere !default;
+$green:   $switchgrass !default;
+$teal:    $legacy !default;
+$cyan:    $summitt !default;
+
+$theme-colors: (
+  white: $white,
+  gray: $smokey,
+  gray-dark: $smokeyx,
+  primary: $globe,
+  secondary: $smokey,
+  success: $legacy,
+  info: $river,
+  warning: $sunsphere,
+  danger: $torch,
+  light: $gray-1,
+  dark: $smokeyx
+);

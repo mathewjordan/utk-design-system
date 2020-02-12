@@ -12,6 +12,8 @@
 // @import "~some-node-module";
 
 @import "common/global";
+@import "vendor/typography/gotham";
+@import "vendor/fontello/css/fontello.css";
 
 /** Import components */
 @import "components/button";
@@ -23,6 +25,7 @@
 @import "gutenberg/button";
 
 /** Import layouts */
+@import "layouts/html";
 @import "layouts/header";
 @import "layouts/sidebar";
 @import "layouts/footer";
