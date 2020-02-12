@@ -6,4 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'UTK\\DesignSystem\\Run' => $baseDir . '/src/Run.php',
 );

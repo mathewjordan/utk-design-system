@@ -8,7 +8,7 @@ if (!defined('WPINC')) {
 require ('vendor/autoload.php');
 
 function run() {
-    $plugin = new UTK\DesignSystem();
+    $plugin = new UTK\DesignSystem\Run();
     $plugin->run();
 }
 

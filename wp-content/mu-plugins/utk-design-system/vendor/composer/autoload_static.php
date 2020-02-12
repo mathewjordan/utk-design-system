@@ -4,11 +4,32 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit75a8366089f6e5466fc857022e75e9d5
+class ComposerStaticInit1b490118132d5943280cd38864d4f4b5
 {
+    public static $prefixLengthsPsr4 = array (
+        'U' => 
+        array (
+            'UTK\\DesignSystem\\' => 17,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'UTK\\DesignSystem\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
+    public static $classMap = array (
+        'UTK\\DesignSystem\\Run' => __DIR__ . '/../..' . '/src/Run.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1b490118132d5943280cd38864d4f4b5::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1b490118132d5943280cd38864d4f4b5::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit1b490118132d5943280cd38864d4f4b5::$classMap;
 
         }, null, ClassLoader::class);
     }

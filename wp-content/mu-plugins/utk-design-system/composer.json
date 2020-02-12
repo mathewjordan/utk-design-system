@@ -7,5 +7,10 @@
             "email": "mat@utk.edu"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "UTK\\DesignSystem\\": "src/"
+        }
+    },
     "require": {}
 }
