@@ -7,7 +7,6 @@ import './autoload/**/*'
 // import local dependencies
 import Router from './util/Router';
 import common from './routes/common';
-import documentation from './components/documentation';
 import home from './routes/home';
 import aboutUs from './routes/about';
 
@@ -19,8 +18,6 @@ const routes = new Router({
   home,
   // About Us page, note the change from about-us to aboutUs.
   aboutUs,
-  // documentation scrolling and actions
-  documentation,
 });
 
 // Load Events
