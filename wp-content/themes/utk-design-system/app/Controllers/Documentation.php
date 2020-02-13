@@ -32,6 +32,7 @@ class Documentation extends Controller
             foreach ($posts as $key => $post) :
                 $structure[$slug]['items'][$key]['id']    = $post->ID;
                 $structure[$slug]['items'][$key]['title'] = $post->post_title;
+                $structure[$slug]['items'][$key]['slug'] = $post->post_name;
                 $structure[$slug]['items'][$key]['url']   = get_permalink($post->ID);
             endforeach;
 
@@ -57,7 +58,7 @@ class Documentation extends Controller
                     foreach ($section['items'] as $item) :
 
                         $output .= '<li>';
-                            $output .= '<a href="' . $item['url'] .'">' . $item['title'] . '</a>';
+                            $output .= '<a href="#utk-' . $item['slug'] .'">' . $item['title'] . '</a>';
                         $output .= '</li>';
 
                     endforeach;
