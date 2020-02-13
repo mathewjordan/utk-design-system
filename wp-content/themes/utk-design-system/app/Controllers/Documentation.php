@@ -6,7 +6,7 @@ use Sober\Controller\Controller;
 
 class Documentation extends Controller
 {
-    function documentationPosts()
+    private function documentationPosts()
     {
         $categories = [
             'style' => 'Styles',
@@ -18,7 +18,6 @@ class Documentation extends Controller
         $structure = [];
 
         foreach ($categories as $slug => $category) :
-
             $args = [
                 'posts_per_page'   => -1,
                 'post_type'        => 'post',
@@ -35,44 +34,38 @@ class Documentation extends Controller
                 $structure[$slug]['items'][$key]['slug'] = $post->post_name;
                 $structure[$slug]['items'][$key]['url']   = get_permalink($post->ID);
             endforeach;
-
         endforeach;
 
         return $structure;
-
     }
 
-    public static function renderDocumentationNav() {
+    public static function renderDocumentationNav()
+    {
 
         $menu = self::documentationPosts();
 
         $output = '<nav class="documentation-nav" id="utk-documentation-nav">';
 
         foreach ($menu as $section) :
-
             if ($section['items']) :
-
                 $output .= '<h3>' . $section['title'] . '</h3>';
                 $output .= '<ul>';
 
-                    foreach ($section['items'] as $item) :
-
-                        $output .= '<li>';
-                            $output .= '<a href="#utk-' . $item['slug'] .'">' . $item['title'] . '</a>';
-                        $output .= '</li>';
-
-                    endforeach;
+                foreach ($section['items'] as $item) :
+                    $output .= '<li>';
+                        $output .= '<a href="#utk-' . $item['slug'] .'">' . $item['title'] . '</a>';
+                    $output .= '</li>';
+                endforeach;
 
                 $output .= '</ul>';
-
             endif;
-
         endforeach;
 
         return $output;
     }
 
-    public static function renderDocumentationPosts() {
+    public static function renderDocumentationPosts()
+    {
 
         $posts = self::documentationPosts();
 
@@ -81,31 +74,24 @@ class Documentation extends Controller
         $output .= '<h2>Inventory</h2>';
 
         foreach ($posts as $slug => $section) :
-
             if ($section['items']) :
-
                 $output .= '<div class="documentation-section" id="utk-' . $slug .'">';
 
-                    $output .= '<h3>' . $section['title'] . '</h3>';
+                $output .= '<h3>' . $section['title'] . '</h3>';
 
-                    foreach ($section['items'] as $item) :
+                foreach ($section['items'] as $item) :
+                    $post = get_post($item['id']);
+                    $slug = $post->post_name;
 
-                        $post = get_post($item['id']);
-                        $slug = $post->post_name;
+                    $output .= '<div class="documentation-item" id="utk-' . $slug .'">';
 
-                        $output .= '<div class="documentation-item" id="utk-' . $slug .'">';
+                        $output .= '<h4>' . $post->post_title . '</h4>';
+                        $output .= '<div>' . $post->post_content . '</div>';
 
-                            $output .= '<h4>' . $post->post_title . '</h4>';
-                            $output .= '<div>' . $post->post_content . '</div>';
-
-                        $output .= '</div>';
-
-                    endforeach;
-
+                    $output .= '</div>';
+                endforeach;
                 $output .= '</div>';
-
             endif;
-
         endforeach;
 
         $output .= '</div>';
