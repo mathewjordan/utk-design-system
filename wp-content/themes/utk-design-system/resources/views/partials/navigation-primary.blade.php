@@ -2,8 +2,12 @@
 
   Namespace App\Controllers;
 
-  $nav = Navigation::documentationNav();
+  if (is_page_template('views/page-documentation.blade.php')) :
 
-  print $nav;
+    $nav = Documentation::renderDocumentationNav();
+
+    print $nav;
+
+  endif;
 
 @endphp

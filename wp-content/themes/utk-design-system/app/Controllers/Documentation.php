@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
-class Navigation extends Controller
+class Documentation extends Controller
 {
-    public static function documentationNav()
+    function documentationPosts()
     {
         $categories = [
             'style' => 'Styles',
@@ -37,13 +37,15 @@ class Navigation extends Controller
 
         endforeach;
 
-        return self::renderNav($structure);
+        return $structure;
 
     }
 
-    static function renderNav($menu) {
+    public static function renderDocumentationNav() {
 
-        $output = '<nav id="utk-documentation-nav">';
+        $menu = self::documentationPosts();
+
+        $output = '<nav class="documentation-nav" id="utk-documentation-nav">';
 
         foreach ($menu as $section) :
 
@@ -57,7 +59,7 @@ class Navigation extends Controller
                         $output .= '<li>';
                             $output .= '<a href="' . $item['url'] .'">' . $item['title'] . '</a>';
                         $output .= '</li>';
-                        
+
                     endforeach;
 
                 $output .= '</ul>';
@@ -65,6 +67,45 @@ class Navigation extends Controller
             endif;
 
         endforeach;
+
+        return $output;
+    }
+
+    public static function renderDocumentationPosts() {
+
+        $posts = self::documentationPosts();
+
+        $output = '<div class="documentation-posts" id="utk-documentation-posts">';
+
+        foreach ($posts as $slug => $section) :
+
+            if ($section['items']) :
+
+                $output .= '<div class="documentation-section" id="utk-' . $slug .'">';
+
+                    $output .= '<h2>' . $section['title'] . '</h2>';
+
+                    foreach ($section['items'] as $item) :
+
+                        $post = get_post($item['id']);
+                        $slug = $post->post_name;
+
+                        $output .= '<div class="documentation-item" id="utk-' . $slug .'">';
+
+                            $output .= '<h3>' . $post->post_title . '</h3>';
+                            $output .= '<div>' . $post->post_content . '</div>';
+
+                        $output .= '</div>';
+
+                    endforeach;
+
+                $output .= '</div>';
+
+            endif;
+
+        endforeach;
+
+        $output .= '</div>';
 
         return $output;
     }

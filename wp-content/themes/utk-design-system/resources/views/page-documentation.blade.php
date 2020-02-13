@@ -15,7 +15,9 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-    @include('partials.page-header')
-    @include('partials.content-page')
+  <div class="page-header sr-only">
+    <h1>{!! App::title() !!}</h1>
+  </div>
+  @include('partials.content-page-documentation')
   @endwhile
 @endsection
