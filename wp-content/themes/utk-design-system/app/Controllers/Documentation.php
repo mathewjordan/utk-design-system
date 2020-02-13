@@ -70,7 +70,6 @@ class Documentation extends Controller
         $posts = self::documentationPosts();
 
         $output = '<div class="documentation-posts" id="utk-documentation-posts">';
-
         $output .= '<h2>Inventory</h2>';
 
         foreach ($posts as $slug => $section) :
