@@ -78,13 +78,15 @@ class Documentation extends Controller
 
         $output = '<div class="documentation-posts" id="utk-documentation-posts">';
 
+        $output .= '<h2>Inventory</h2>';
+
         foreach ($posts as $slug => $section) :
 
             if ($section['items']) :
 
                 $output .= '<div class="documentation-section" id="utk-' . $slug .'">';
 
-                    $output .= '<h2>' . $section['title'] . '</h2>';
+                    $output .= '<h3>' . $section['title'] . '</h3>';
 
                     foreach ($section['items'] as $item) :
 
@@ -93,7 +95,7 @@ class Documentation extends Controller
 
                         $output .= '<div class="documentation-item" id="utk-' . $slug .'">';
 
-                            $output .= '<h3>' . $post->post_title . '</h3>';
+                            $output .= '<h4>' . $post->post_title . '</h4>';
                             $output .= '<div>' . $post->post_content . '</div>';
 
                         $output .= '</div>';
