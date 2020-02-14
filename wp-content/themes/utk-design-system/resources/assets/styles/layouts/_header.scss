@@ -28,23 +28,40 @@ body > header {
 
 body > .campus {
   border-top: 0.5rem solid $orange;
-  border-bottom: 1px solid $gray-1;
   box-sizing: content-box;
   color: $smokey;
-  background-color: $gray-0;
-  //box-shadow: 0.125rem 0.125rem 0.25rem rgba($smokey, 0.125);
+  background-color: $white;
+  box-shadow: 0.125rem 0.125rem 0.25rem rgba($smokey, 0.125);
 
   .campus-inner {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 2rem;
     position: relative;
     font-size: $font-sm;
 
+    .utk-campus-back {
+      color: $smokey;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      background-color: $white;
+      align-self: flex-start;
+      flex-grow: 1;
+
+      span {
+        color: $rock;
+        font-size: 0.75em;
+        margin-top: -2px;
+        margin-right: 0.25rem;
+      }
+    }
+
     .utk-campus-nav {
-      border-left: 1px solid $gray-1;
+      border-left: 1px solid $gray-0;
       color: $smokey;
       font-weight: 400;
       padding: 0 1rem;
@@ -62,7 +79,7 @@ body > .campus {
     }
 
     .utk-campus-search {
-      border-left: 1px solid $gray-1;
+      border-left: 1px solid $gray-0;
       color: $smokey;
       font-weight: 700;
       display: flex;
@@ -72,8 +89,8 @@ body > .campus {
       input {
         border: none;
         height: 100%;
-        background-color: $white;
-        padding: 0 0.5rem;
+        background-color: $gray-0;
+        padding: 0 1rem;
         color: $smokeyx;
         font-family: $sans;
         font-size: $font-sm;
@@ -87,8 +104,8 @@ body > .campus {
         @extend .btn;
         @extend .btn-muted;
 
-        border-left: 1px solid $gray-1;
-        border-right: 1px solid $gray-1;
+        border-left: 1px solid $gray-0;
+        border-right: 1px solid $gray-0;
         padding: 0 1rem;
         margin: 0;
         box-shadow: none;
