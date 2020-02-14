@@ -1,3 +1,4 @@
+@include('partials.campus')
 <header class="banner">
   <div class="container">
     <div class="brand">
