@@ -31,7 +31,7 @@ body > .campus {
   box-sizing: content-box;
   color: $smokey;
   background-color: $white;
-  box-shadow: 0.125rem 0.125rem 0.25rem rgba($smokey, 0.125);
+  box-shadow: 0 0.25rem 0.5rem rgba($smokey, 0.125);
 
   .campus-inner {
     width: 100%;
@@ -60,7 +60,14 @@ body > .campus {
       }
     }
 
-    .utk-campus-nav {
+    .campus-inner-menu {
+      display: flex;
+      flex-direction: row;
+      border-right: 1px solid $gray-0;
+    }
+
+    .utk-campus-nav,
+    .utk-campus-accessiblity {
       border-left: 1px solid $gray-0;
       color: $smokey;
       font-weight: 400;
@@ -101,9 +108,7 @@ body > .campus {
       }
 
       button {
-        @extend .btn;
-        @extend .btn-muted;
-
+        border: 0;
         border-left: 1px solid $gray-0;
         border-right: 1px solid $gray-0;
         padding: 0 1rem;
