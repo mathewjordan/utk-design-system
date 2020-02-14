@@ -1,7 +1,7 @@
 .btn {
   display: inline-flex;
   font-size: $font-md;
-  font-weight: 700;
+  font-weight: 400;
   background-color: $globe;
   color: $white;
   padding: 0.75em 1.5em;
@@ -13,7 +13,9 @@
   transition: none;
   border: none;
   margin-bottom: 1rem;
-  border-radius: 0.25rem !important; // override any gutenberg styling
+  border-radius: 0 !important; // override any gutenberg styling
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
 
   &:visited {
     color: $white;
@@ -47,35 +49,13 @@
   }
 
   &-muted {
-    background-color: $gray-1;
+    background-color: $gray-0;
     color: $smokey;
 
     &:hover,
     &:focus {
       color: $smokey;
-      background-color: $gray-2;
-    }
-  }
-
-  &-orange {
-    background-color: $white;
-    color: $smokey;
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: "";
-      width: calc(100% - 3em);
-      height: 0.125em;
-      background-color: $orange;
-      position: absolute;
-      bottom: 0.65em;
-    }
-
-    &:hover,
-    &:focus {
-      color: $smokey;
-      background-color: $gray-0;
+      background-color: $gray-1;
     }
   }
 
@@ -92,7 +72,7 @@
   }
 
   &-outline {
-    border: 1px solid $gray-1;
+    border: 1px solid $gray-0;
 
     &.btn-primary {
       background-color: transparent;
@@ -109,7 +89,7 @@
     &.btn-muted {
       background-color: transparent;
       color: $smokey;
-      border-color: $gray-1;
+      border-color: $gray-0;
     }
   }
 }
